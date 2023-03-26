@@ -1,0 +1,5 @@
+1. NPM: https://www.npmjs.com/
+2. Check npm version: npm -v
+3. generate a package.json file: $ npm init or $ npm init -y
+4. Download a npm package globally: $ npm install -g package-name
+5. Download a npm package locally: $ npm install package-name
