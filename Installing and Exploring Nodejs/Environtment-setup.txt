@@ -1,0 +1,9 @@
+STEPS:
+    1. Download and install Nodejs (LTS or current version) on your machine:
+        https://nodejs.org/en
+
+    2. Check node version on your machine
+        $ node -v
+
+    3. Download and Install VSCode:
+        https://code.visualstudio.com/
