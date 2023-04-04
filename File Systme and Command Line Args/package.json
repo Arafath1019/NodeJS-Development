@@ -1,0 +1,16 @@
+{
+  "name": "file-systme-and-command-line-args",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "yargs": "^12.0.2"
+  }
+}
