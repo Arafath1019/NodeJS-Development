@@ -1,0 +1,28 @@
+1. Create account and login on www.heroku.com
+
+2. Login from local computer terminal using Heroku: 
+    
+    Download and install Heroku installer :
+    Follow the steps of below:
+    https://devcenter.heroku.com/articles/heroku-cli
+
+    Verify Heroku Installation
+    $ heroku --version
+
+    Login with the Heroku CLI:
+    $ heroku login
+
+
+    Deploying NodeJS to Heroku:
+    Add id_rsa.pub to Hiroku
+    $ heroku keys:add
+
+    Create application in Heroku
+    $ heroku create your-application-name
+
+    check git remote:
+    $ git remote
+
+    Push code to heroku
+    $ git push heroku master
+
