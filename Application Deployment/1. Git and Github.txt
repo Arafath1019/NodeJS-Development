@@ -1,0 +1,11 @@
+1. Create account and login on www.github.com
+
+    Install git in computer 
+    https://git-scm.com/downloads
+
+    Check git version:
+    $ git --version
+
+    Setting up SSH Keys: 
+    $ ssh-keygen -t rsa -b 4096 -C "your_email"
+    Copy contents of generated .ssh/id_rsa.pub file and setting up this in github account SSH key section

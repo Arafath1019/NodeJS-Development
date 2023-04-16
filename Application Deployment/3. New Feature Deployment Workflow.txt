@@ -1,0 +1,8 @@
+1. Developed a new feature in local branch
+
+2. Pushed locally developed feature to github and merged the merge with master or main branch
+
+3. Pull the latest changes in main or master branch in local computer
+
+4. Push latest master or main branch to heroku:
+$ git push heroku master
