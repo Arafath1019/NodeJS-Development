@@ -1,0 +1,18 @@
+1. Download and Install Robo 3T MongoDB Database GUI Viewer
+
+https://robomongo.org/
+
+2. Open Robo 3T
+
+3. Click "Connect", next "New Connection", next "Manually Configure my connection settings"
+4. Set Connection Name and others as default
+5. Click "Test Connection" and check all connections are "OK"
+6. Click "Save" for new connection
+7. Double click on the created database
+8. Right click on database name and click "Open IntelliShell"
+9. Write db.version() and run for checking the version and all working fine
+
+10. Use npm mongodb as official mongodb Driver for Nodejs
+https://www.mongodb.com/docs/drivers/
+https://www.npmjs.com/package/mongodb
+https://www.mongodb.com/docs/manual/reference/

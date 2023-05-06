@@ -1,0 +1,9 @@
+Using database as MongoDB:
+www.mongodb.com
+
+# SQL(Structured Query Language)   vs   NoSQL (Not only SQL, MongoDB)
+
+1. Database                                 Database
+2. Table                                    Collection
+3. Row/Record                               Document
+4. Column                                   Field                      

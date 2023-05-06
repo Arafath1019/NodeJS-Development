@@ -1,0 +1,12 @@
+1. Download MongoDB Community Server ZIP Package
+https://www.mongodb.com/try/download/community
+
+2. Extracted the MongoDB Community Server ZIP Package and rename it as "mongodb"
+
+3. Move "mongodb" folder to Users/Public directory on windows machine
+
+4. Create "mongodb-data" folder inside Users/Public folder on windows machine
+
+5. Starting MongoDB server, run the command
+
+/Users/Public/mongodb/bin/mongod.exe --dbpath=/Users/Public/mongodb-data
