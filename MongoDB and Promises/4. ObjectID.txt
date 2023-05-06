@@ -1,0 +1,15 @@
+ObjectID in mongodb,
+
+Returns a new ObjectId. The 12-byte ObjectId consists of:
+
+1. A 4-byte timestamp, representing the ObjectId's creation, measured in seconds since the Unix epoch.
+
+2. A 5-byte random value generated once per process. This random value is unique to the machine and process.
+
+3. A 3-byte incrementing counter, initialized to a random value.
+
+ObjectId() has the following methods:
+
+ObjectId.getTimestamp() - Returns the timestamp portion of the object as a Date.
+ObjectId.toString() - Returns the ObjectId as a hexadecimal string.
+ObjectId.valueOf() - Returns ObjectId.self.
