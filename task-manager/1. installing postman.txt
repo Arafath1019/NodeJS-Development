@@ -1,0 +1,2 @@
+1. Download and install postman
+https://www.postman.com/downloads/
