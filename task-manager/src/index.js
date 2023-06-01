@@ -6,6 +6,19 @@ const taskRoutes = require('./routes/task.js');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Middleware
+// app.use((req, res, next) => {
+//   if(req.method === "POST"){
+//     res.send("POST request is disabled");
+//   } else {
+//     next();
+//   }
+// });
+
+// app.use((req, res, next) =>{
+//   res.status(503).send("Site is currently down. Check back soon!");
+// });
+
 app.use(express.json());
 
 app.use(userRoutes);
