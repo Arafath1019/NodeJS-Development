@@ -1,0 +1,14 @@
+1. Create a workspace
+2. Create a collection, example: Task app
+3. Create different routes for Task App collection
+4. Create a Environment in the workspace, example: Task Manager API (Dev), Task Manager API (Prod)
+5. Inside Task Manager API (Dev) Environment, set variable url is Type: default, Initial Value: localhost:3000, Current Value: localhost:3000
+6. Set authToken variable inside Task Manager API (Dev) Environment.
+7. For different routes which needs Authorization Bearer token, set Authorization Type: Inherit auth from parent
+8. For different routes which does not need Authorization Bearer Token, set Authorization Type: No Auth
+9. For automatically set authToken in Environment while make a request, write the below javascript code inside tests section
+
+var resp = pm.response.json();
+if (resp.token) {
+  postman.setEnvironmentVariable("authToken", resp.token);
+}
