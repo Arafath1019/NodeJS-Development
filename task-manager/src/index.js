@@ -1,7 +1,7 @@
 const express = require("express");
 require("./db/mongoose.js");
-const userRoutes = require('./routes/user.js');
-const taskRoutes = require('./routes/task.js');
+const userRoutes = require("./routes/user.js");
+const taskRoutes = require("./routes/task.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -24,8 +24,6 @@ app.use(express.json());
 app.use(userRoutes);
 app.use(taskRoutes);
 
-
-
 app.listen(port, () => {
   console.log("Server is up on port " + port);
 });
@@ -36,7 +34,7 @@ app.listen(port, () => {
 //   const password = "Red12345!";
 
 //   const hashedPassword = await bcrypt.hash(password, 8);
-  
+
 //   console.log("Password : ", password);
 //   console.log("Hashed Password : ", hashedPassword);
 
@@ -57,3 +55,18 @@ app.listen(port, () => {
 // };
 
 // myFunction();
+
+// const Task = require('./models/task.js');
+// const User = require('./models/user.js');
+
+// const main = async () =>{
+//   const task = await Task.findById("647a2b2d97817843cfdd123d");
+//   await task.populate('owner');
+//   console.log(task.owner);
+
+//   const user = await User.findById("647a2aa27bb54fe78c43bb52");
+//   await user.populate('tasks');
+//   console.log(user.tasks);
+// }
+
+// main();
