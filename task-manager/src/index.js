@@ -19,6 +19,35 @@ const port = process.env.PORT || 3000;
 //   res.status(503).send("Site is currently down. Check back soon!");
 // });
 
+// Uploading file using multer
+// const multer = require('multer');
+// const uploads = multer({
+//   dest: 'uploads',
+//   limits:{
+//     fileSize: 1000000
+//   },
+//   // fileFilter(req, file, cb){
+//   //   if(!file.originalname.endsWith('.png')){
+//   //     cb(new Error('Please upload a file with png format'));
+//   //   }
+
+//   //   cb(undefined, true);
+//   // }
+
+//   fileFilter(req, file, cb){
+//     if(!file.originalname.match(/\.(png|jpg)$/)){
+//       cb(new Error('Please upload a file with png or jpg format'));
+//     }
+//     cb(undefined, true);
+//   }
+// });
+
+// app.post('/uploads', uploads.single('upload'), (req, res)=>{
+//   res.send();
+// }, (error, req, res, next) => {
+//   res.status(400).send({error: error.message});
+// })
+
 app.use(express.json());
 
 app.use(userRoutes);

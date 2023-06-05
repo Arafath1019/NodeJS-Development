@@ -1,4 +1,6 @@
 const express = require("express");
+const multer = require('multer');
+const sharp = require('sharp');
 const router = express.Router();
 const User = require("../models/user.js");
 const auth = require("../middleware/auth.js");
@@ -147,4 +149,72 @@ router.delete("/users/me", auth, async (req, res) => {
   }
 });
 
+// const avatars = multer({
+//   dest: 'avatars',
+//   limits:{
+//     fileSize: 1000000
+//   }, 
+//   fileFilter(req, file, cb){
+//     if(!file.originalname.match(/\.(jpg|jpeg|png)$/)){
+//       cb(new Error('Please upload a file within jpg or jpeg or png format'));
+//     }
+//     cb(undefined, true)
+//   }
+// });
+
+// router.post('/users/me/avatar', avatars.single('avatar'), (req, res) => {
+//   res.send();
+// }, (error, req, res, next) => {
+//   res.status(400).send({error: error.message});
+// })
+
+const avatars = multer({
+  limits:{
+    fileSize: 1000000
+  }, 
+  fileFilter(req, file, cb){
+    if(!file.originalname.match(/\.(jpg|jpeg|png)$/)){
+      cb(new Error('Please upload a file within jpg or jpeg or png format'));
+    }
+    cb(undefined, true)
+  }
+});
+
+router.post('/users/me/avatar', auth, avatars.single('avatar'), async (req, res) => {
+  const buffer = await sharp(req.file.buffer).resize(320, 240).png().toBuffer();
+  // req.user.avatar = req.file.buffer;
+  req.user.avatar = buffer;
+  await req.user.save();
+  res.send();
+}, (error, req, res, next) => {
+  res.status(400).send({error: error.message});
+})
+
+router.delete('/users/me/avatar', auth, async (req, res) =>{
+  try{
+    req.user.avatar = undefined;
+    await req.user.save();
+    res.send();
+  } catch(error){
+    console.log(error)
+  }
+})
+
+router.get('/users/:id/avatar', async (req, res) =>{
+  try{
+    const user = await User.findById(req.params.id);
+    if(!user || !user.avatar){
+      throw new Error();
+    }
+
+    res.set('Content-type', 'image/jpg');
+    res.send(user.avatar);
+  }catch(error){
+    console.log(error)
+  }
+})
+
 module.exports = router;
+
+// How to use Binary data in client side
+// <img src='data:image/jpg;base64,Binary_data' />
